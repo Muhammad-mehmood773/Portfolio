@@ -1,0 +1,63 @@
+<section class="w-full">
+  <!-- Project 1: text left, image right -->
+  <article class="grid md:grid-cols-2 gap-10 items-center">
+    <!-- Text block -->
+    <div appRevealOnScroll [fromX]="-40" [fromScale]="0.98">
+      <p class="text-xs tracking-[0.2em] uppercase text-purple-300/80">Featured Project</p>
+      <h3 class="mt-1 text-3xl font-semibold text-white">{{ items[0].title }}</h3>
+      <div class="mt-5 relative">
+        <div class="absolute -inset-2 rounded-2xl bg-purple-500/20 blur-2xl"></div>
+        <div class="relative rounded-2xl ring-1 ring-white/10 bg-white/5 p-5 text-white/80">
+          {{ items[0].description }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Image block with strong effects -->
+    <div class="relative" appRevealOnScroll [fromX]="40" [fromScale]="0.96" [delay]="0.05">
+      <div class="pointer-events-none absolute -inset-8 rounded-3xl bg-purple-600/30 blur-3xl"></div>
+      <div class="group relative overflow-hidden rounded-xl ring-1 ring-white/15 bg-white/5 tilt">
+        <div class="relative aspect-[16/10] w-full bg-gradient-to-br from-white/10 to-white/5">
+          <div class="shimmer"></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Sparkles row -->
+  <div class="mt-10 flex justify-center gap-6 opacity-80" appRevealOnScroll [delay]="0.15">
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+  </div>
+
+  <!-- Project 2: image left, text right -->
+  <article class="mt-20 grid md:grid-cols-2 gap-10 items-center">
+    <!-- Image block -->
+    <div class="relative order-1" appRevealOnScroll [fromX]="-40" [fromScale]="0.96">
+      <div class="pointer-events-none absolute -inset-8 rounded-3xl bg-purple-600/30 blur-3xl"></div>
+      <div class="group relative overflow-hidden rounded-xl ring-1 ring-white/15 bg-white/5 tilt">
+        <div class="relative aspect-[16/10] w-full bg-gradient-to-r from-white/10 to-white/5">
+          <div class="shimmer"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text block -->
+    <div class="order-2" appRevealOnScroll [fromX]="40" [fromScale]="0.98" [delay]="0.05">
+      <p class="text-xs tracking-[0.2em] uppercase text-purple-300/80">Featured Project</p>
+      <h3 class="mt-1 text-3xl font-semibold text-white">{{ items[1].title }}</h3>
+      <div class="mt-5 relative">
+        <div class="absolute -inset-2 rounded-2xl bg-purple-500/20 blur-2xl"></div>
+        <div class="relative rounded-2xl ring-1 ring-white/10 bg-white/5 p-5 text-white/80">
+          {{ items[1].description }}
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Sparkles row -->
+  <div class="mt-10 flex justify-center gap-6 opacity-80" appRevealOnScroll [delay]="0.2">
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+  </div>
+</section>

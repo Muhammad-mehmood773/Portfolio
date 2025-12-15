@@ -1,0 +1,85 @@
+
+<section class="w-full text-center">
+
+  <h3 class="text-xl sm:text-2xl md:text-3xl font-semibold text-white/90" appRevealOnScroll [fromY]="16">
+    I'm currently looking to join a <span class="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 via-purple-400 to-indigo-300">cross-functional</span> team
+  </h3>
+  <p class="mt-2 text-sm text-white/60" appRevealOnScroll [delay]="0.1">that values improving people's lives through accessible design</p>
+
+  <!-- Skills grid (icon + text) -->
+  <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+    @for (skill of skills; track skill.name; let i = $index) {
+      <div
+        class="skill-card group"
+        appRevealOnScroll
+        [fromY]="18"
+        [fromScale]="0.98"
+        [duration]="0.65"
+        [delay]="0.06 * i"
+      >
+        <div class="skill-card-bg bg-gradient-to-br {{ skill.accent }}"></div>
+        <div class="skill-card-content">
+          <span class="skill-icon" aria-hidden="true">
+            <svg [attr.viewBox]="skill.icon.viewBox" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="size-5">
+              @for (p of skill.icon.paths; track p.d) {
+                <path [attr.d]="p.d" />
+              }
+            </svg>
+          </span>
+          <span class="skill-name">{{ skill.name }}</span>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Orbital graphic -->
+  <div class="relative mx-auto mt-14 h-[360px] w-[360px] sm:h-[420px] sm:w-[420px]" appRevealOnScroll [delay]="0.3">
+    <!-- Connector arcs rising to icons row -->
+    <div class="pointer-events-none absolute -top-28 left-1/2 -translate-x-1/2 w-[420px] h-[200px] opacity-60">
+      <svg viewBox="0 0 420 200" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M210 190 C 210 150, 140 120, 80 40" stroke="url(#g1)" stroke-width="1.5" />
+        <path d="M210 190 C 220 150, 210 115, 140 30" stroke="url(#g2)" stroke-width="1.5" />
+        <path d="M210 190 C 210 145, 210 110, 210 25" stroke="url(#g3)" stroke-width="1.5" />
+        <path d="M210 190 C 200 150, 210 115, 280 30" stroke="url(#g2)" stroke-width="1.5" />
+        <path d="M210 190 C 210 150, 280 120, 340 40" stroke="url(#g1)" stroke-width="1.5" />
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#C084FC" stop-opacity="0.4" />
+            <stop offset="1" stop-color="#818CF8" stop-opacity="0.15" />
+          </linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#A78BFA" stop-opacity="0.35" />
+            <stop offset="1" stop-color="#22D3EE" stop-opacity="0.15" />
+          </linearGradient>
+          <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#C084FC" stop-opacity="0.45" />
+            <stop offset="1" stop-color="#F472B6" stop-opacity="0.15" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <!-- Glow field -->
+    <div class="absolute inset-0 rounded-full bg-purple-600/20 blur-3xl"></div>
+    <div class="absolute inset-8 rounded-full bg-purple-500/10 blur-2xl"></div>
+
+    <!-- Rotating rings -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="ring ring-purple-400/30 rounded-full animate-spin-slow size-[320px]"></div>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="ring ring-purple-400/20 rounded-full animate-spin-slower size-[260px]"></div>
+    </div>
+
+    <!-- Center orb with logo glyph -->
+    <div class="absolute inset-0 grid place-items-center">
+      <div class="relative size-40 rounded-full bg-gradient-to-b from-purple-500 to-fuchsia-600 ring-1 ring-white/20 shadow-[0_0_60px_rgba(168,85,247,0.6)]">
+        <div class="absolute inset-0 grid place-items-center text-5xl text-white/95 select-none">&Sigma;</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <div class="mt-10 flex justify-center gap-6 opacity-80" appRevealOnScroll [delay]="0.15">
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+  </div>

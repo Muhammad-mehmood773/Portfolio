@@ -1,0 +1,39 @@
+  
+  <section id="contact-form" class="w-full">
+  <div class="mx-auto max-w-3xl">
+    <h2 class="text-2xl sm:text-3xl font-semibold text-white" appRevealOnScroll [fromY]="16">Let’s build something great together</h2>
+    <p class="mt-2 text-white/70" appRevealOnScroll [delay]="0.07">Fill out the form below and I’ll get back to you as soon as possible.</p>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="mt-8 grid gap-5" appRevealOnScroll [delay]="0.12">
+      <div class="grid sm:grid-cols-2 gap-5">
+        <label class="grid gap-2">
+          <span class="text-sm text-white/80">Name</span>
+          <input formControlName="name" type="text" placeholder="Your full name" class="w-full rounded-lg bg-white/5 ring-1 ring-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-purple-400"/>
+          @if (form.controls['name'].touched && form.controls['name'].invalid) { <span class="text-xs text-rose-300">Please enter at least 2 characters.</span> }
+        </label>
+        <label class="grid gap-2">
+          <span class="text-sm text-white/80">Email</span>
+          <input formControlName="email" type="email" placeholder="you@example.com" class="w-full rounded-lg bg-white/5 ring-1 ring-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-purple-400"/>
+          @if (form.controls['email'].touched && form.controls['email'].invalid) { <span class="text-xs text-rose-300">Please enter a valid email.</span> }
+        </label>
+      </div>
+
+      <label class="grid gap-2">
+        <span class="text-sm text-white/80">Message</span>
+        <textarea formControlName="message" rows="6" placeholder="Tell me a bit about your project or idea" class="w-full rounded-lg bg-white/5 ring-1 ring-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-purple-400"></textarea>
+        @if (form.controls['message'].touched && form.controls['message'].invalid) { <span class="text-xs text-rose-300">Please write at least 10 characters.</span> }
+      </label>
+
+      <div class="flex items-center gap-4">
+        <button type="submit" class="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-600 to-fuchsia-600 px-6 py-3 text-sm font-medium text-white ring-1 ring-white/10 hover:from-purple-500 hover:to-fuchsia-500 transition disabled:opacity-60" [disabled]="submitting()">
+          @if (!submitting()) { Submit } @else { Submitting... }
+        </button>
+        @if (submitted()) { <span class="text-sm text-emerald-300">Thanks! Your message has been sent.</span> }
+      </div>
+    </form>
+  </div>
+</section>
+ <div class="mt-10 flex justify-center gap-6 opacity-80" appRevealOnScroll [delay]="0.15">
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+  </div>

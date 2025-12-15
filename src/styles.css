@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+ /* Sparkles */
+.sparkle {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+.sparkle::before,
+.sparkle::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9), rgba(255,255,255,0));
+  border-radius: 9999px;
+}
+.sparkle::before {
+  width: 18px;
+  height: 2px;
+  filter: blur(0.2px);
+  animation: twinkle 2.2s ease-in-out infinite;
+}
+.sparkle::after {
+  width: 2px;
+  height: 18px;
+  filter: blur(0.2px);
+  animation: twinkle 2.2s ease-in-out infinite reverse;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.9) rotate(0deg); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.05) rotate(20deg); }
+}

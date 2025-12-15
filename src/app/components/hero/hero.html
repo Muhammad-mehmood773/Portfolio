@@ -1,0 +1,51 @@
+<div class="relative w-full">
+  <div class="grid lg:grid-cols-[420px_1fr] gap-10 items-start">
+    <!-- Avatar with glow -->
+    <div class="order-2 lg:order-1 relative mx-auto lg:mx-0">
+      <div class="absolute -inset-6 rounded-full bg-purple-500/30 blur-3xl"></div>
+      <div class="absolute -inset-1 rounded-full bg-gradient-to-b from-fuchsia-500/30 to-indigo-500/20 blur-2xl"></div>
+      <img style="height: 410px; width: 100%; object-fit: cover;" src="assets/comic-book-lifestyle-scene-office.jpg"
+        alt="Avatar" class="hero-avatar sm:h-[100%] relative z-10 sm:h-100 object-contain drop-shadow-[0_0_30px_rgba(168,85,247,0.45)]" />
+    </div>
+
+    <!-- Text content -->
+    <div class="order-1 lg:order-2 flex flex-col gap-3">
+      <div class="relative">
+        <p class="text-lg text-white/70">
+          Hello! I am <span
+            class=" bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">{{
+            name }}</span>
+        </p>
+      </div>
+
+      <span class="text-xs uppercase tracking-[0.3em] text-white/80">A Designer who</span>
+      <h2 class="text-4xl sm:text-6xl md:text-4xl leading-tight font-semibold">
+        Judges a book
+        <span class="block">by its <span
+            class="bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-400 bg-clip-text text-transparent">cover..</span></span>
+        <span
+          class="block mt-6  bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-400 bg-clip-text text-transparent">{{
+          typed() }}<span class="caret"></span></span>
+      </h2>
+
+      <p class="mt-2 text-sm sm:text-base text-white/70">
+        Currently, I'm a Software Engineer at
+        <a href="https://www.astrikdigital.com/" target="_blank" rel="noopener"
+          class="text-[#1877f2] hover:underline">Astrik</a>.
+      </p>
+
+      <p class="mt-6 max-w-2xl text-white/70">
+        A skilled Software Engineer with 3+ years of hands-on experience in building modern web applications.
+        Specialized in Frontend development using Angular, Backend development with .NET Core,
+        and working with relational databases including SQL Server and PostgreSQL.
+        Passionate about delivering scalable, high-performance, and user-focused digital solutions.
+      </p>
+
+    </div>
+  </div>
+</div>
+
+  <div class="mt-10 flex justify-center gap-6 opacity-80" appRevealOnScroll >
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+  </div>

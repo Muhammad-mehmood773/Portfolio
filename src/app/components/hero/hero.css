@@ -1,0 +1,47 @@
+/* Caret blink for typewriter line */
+.caret {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: #ffffff;
+  margin-left: 4px;
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}
+
+/* Prevent image selection highlight */
+img[alt="Avatar"] {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+ .hero-avatar {
+   opacity: 0;
+   transform: translateY(10px) scale(0.98);
+   animation: hero-avatar-in 700ms ease forwards;
+ }
+
+ @keyframes hero-avatar-in {
+   to {
+     opacity: 1;
+     transform: translateY(0) scale(1);
+   }
+ }
+
+
+ 
+ @media (max-width: 1023px) {
+  .hero-avatar {
+    height: 100% !important;
+  }
+}
+
+
+ @media (max-width: 640px) {
+  .hero-avatar {
+    height: 100% !important;
+  }
+}

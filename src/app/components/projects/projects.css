@@ -1,0 +1,60 @@
+/* Strong animation helpers for Projects */
+
+/* Tilt hover */
+.tilt {
+  transition: transform 400ms ease, box-shadow 400ms ease;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0);
+}
+.tilt:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(-6deg) translateZ(0);
+}
+
+/* Shimmer overlay */
+.shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 45%, rgba(255,255,255,0) 70%);
+  transform: translateX(-100%);
+  animation: shimmer-move 2.6s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes shimmer-move {
+  0% { transform: translateX(-100%); }
+  60% { transform: translateX(120%); }
+  100% { transform: translateX(120%); }
+}
+
+/* Sparkles */
+.sparkle {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+.sparkle::before,
+.sparkle::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9), rgba(255,255,255,0));
+  border-radius: 9999px;
+}
+.sparkle::before {
+  width: 18px;
+  height: 2px;
+  filter: blur(0.2px);
+  animation: twinkle 2.2s ease-in-out infinite;
+}
+.sparkle::after {
+  width: 2px;
+  height: 18px;
+  filter: blur(0.2px);
+  animation: twinkle 2.2s ease-in-out infinite reverse;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.9) rotate(0deg); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.05) rotate(20deg); }
+}
