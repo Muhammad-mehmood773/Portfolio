@@ -1,0 +1,45 @@
+<svg width="600" height="500" viewBox="0 0 600 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 250) rotate(90) scale(260 320)">
+      <stop offset="0" stop-color="#2B0A4D"/>
+      <stop offset="0.55" stop-color="#1C0534"/>
+      <stop offset="1" stop-color="#120323"/>
+    </radialGradient>
+
+    <radialGradient id="core" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 250) rotate(90) scale(90)">
+      <stop offset="0" stop-color="#D46BFF"/>
+      <stop offset="1" stop-color="#8F2BFF"/>
+    </radialGradient>
+
+    <filter id="glow" x="0" y="0" width="600" height="500" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.70  0 0 0 0 0.35  0 0 0 0 1  0 0 0 0.55 0" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="500" fill="url(#bg)"/>
+
+  <!-- Decorative arcs (top) -->
+  <g opacity="0.35" stroke="#8C5BFF" stroke-width="2" fill="none">
+    <path d="M300 70C330 70 357 86 372 112"/>
+    <path d="M300 70C270 70 243 86 228 112"/>
+    <path d="M300 58C342 58 379 80 399 112"/>
+  </g>
+
+  <!-- Orbits/rings (give them IDs so you can target them for continuous animation) -->
+  <g id="skills-orbit-rings" opacity="0.45" stroke="#8C5BFF" fill="none">
+    <circle id="ring-1" cx="300" cy="250" r="160" stroke-width="3"/>
+    <circle id="ring-2" cx="300" cy="250" r="120" stroke-width="3" opacity="0.75"/>
+    <circle id="ring-3" cx="300" cy="250" r="200" stroke-width="3" opacity="0.55"/>
+  </g>
+
+  <!-- Core -->
+  <g filter="url(#glow)">
+    <circle id="skills-orbit-core" cx="300" cy="250" r="82" fill="url(#core)"/>
+    <text id="skills-orbit-sigma" x="300" y="276" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="72" font-weight="600" fill="#F4EFFF">Σ</text>
+  </g>
+</svg>
