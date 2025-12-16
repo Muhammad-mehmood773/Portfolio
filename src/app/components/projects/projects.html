@@ -1,59 +1,61 @@
 <section class="w-full">
-  <!-- Project 1: text left, image right -->
-  <article class="grid md:grid-cols-2 gap-10 items-center">
-    <!-- Text block -->
-    <div appRevealOnScroll [fromX]="-40" [fromScale]="0.98">
-      <p class="text-xs tracking-[0.2em] uppercase text-purple-300/80">Featured Project</p>
-      <h3 class="mt-1 text-3xl font-semibold text-white">{{ items[0].title }}</h3>
-      <div class="mt-5 relative">
-        <div class="absolute -inset-2 rounded-2xl bg-purple-500/20 blur-2xl"></div>
-        <div class="relative rounded-2xl ring-1 ring-white/10 bg-white/5 p-5 text-white/80">
-          {{ items[0].description }}
+
+ <h3
+  class="text-center text-2xl sm:text-3xl font-semibold tracking-tight text-white"
+  appRevealOnScroll
+  [fromY]="16"
+  [duration]="0.6">
+  Featured Projects & Case Studies
+</h3>
+<p
+  class="text-center text-sm sm:text-base text-white/70 mt-2 max-w-xl mx-auto"
+  appRevealOnScroll
+  [fromY]="8"
+  [duration]="0.6"
+  [delay]="0.1">
+  A showcase of my work across Inventory, Sales, HR, Facilities, and more. Explore interactive dashboards, scheduling systems, and management platforms built for real-world applications.
+</p>
+
+  @for (item of items; track item.title; let idx = $index) {
+     <article class="grid md:grid-cols-2 gap-10 items-center mt-10">
+
+      <!-- Text block -->
+      <div
+        appRevealOnScroll
+        [fromX]="idx % 2 === 0 ? -40 : 40"
+        [fromScale]="0.98"
+        [class.order-2]="idx % 2 === 1"
+      >
+        <p class="text-xs tracking-[0.2em] uppercase text-purple-300/80">Featured Project</p>
+        <h3 class="mt-1 text-3xl font-semibold text-white">{{item.title}}</h3>
+        <div class="mt-5 relative">
+          <div class="absolute -inset-2 rounded-2xl bg-purple-500/20 blur-2xl"></div>
+          <div class="relative rounded-2xl ring-1 ring-white/10 bg-white/5 p-5 text-white/80">
+           {{item.description}}
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Image block with strong effects -->
-    <div class="relative" appRevealOnScroll [fromX]="40" [fromScale]="0.96" [delay]="0.05">
-      <div class="pointer-events-none absolute -inset-8 rounded-3xl bg-purple-600/30 blur-3xl"></div>
-      <div class="group relative overflow-hidden rounded-xl ring-1 ring-white/15 bg-white/5 tilt">
-        <div class="relative aspect-[16/10] w-full bg-gradient-to-br from-white/10 to-white/5">
-          <div class="shimmer"></div>
+      <!-- Image block -->
+      <div
+        class="relative"
+        [class.order-1]="idx % 2 === 1"
+        appRevealOnScroll
+        [fromX]="idx % 2 === 0 ? 40 : -40"
+        [fromScale]="0.96"
+        [delay]="0.05"
+      >
+        <div class="pointer-events-none absolute -inset-8 rounded-3xl bg-purple-600/30 blur-3xl"></div>
+        <div class="group relative overflow-hidden rounded-xl ring-1 ring-white/15 bg-white/5 tilt">
+          <img [src]="item.image" alt="@item.title" class="absolute inset-0 w-full h-full object-cover opacity-60" />
+          <div class="relative aspect-[16/10] w-full bg-gradient-to-br from-white/10 to-white/5">
+            <div class="shimmer"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </article>
 
-  <!-- Sparkles row -->
-  <div class="mt-10 flex justify-center gap-6 opacity-80" appRevealOnScroll [delay]="0.15">
-    <span class="sparkle"></span>
-    <span class="sparkle"></span>
-  </div>
-
-  <!-- Project 2: image left, text right -->
-  <article class="mt-20 grid md:grid-cols-2 gap-10 items-center">
-    <!-- Image block -->
-    <div class="relative order-1" appRevealOnScroll [fromX]="-40" [fromScale]="0.96">
-      <div class="pointer-events-none absolute -inset-8 rounded-3xl bg-purple-600/30 blur-3xl"></div>
-      <div class="group relative overflow-hidden rounded-xl ring-1 ring-white/15 bg-white/5 tilt">
-        <div class="relative aspect-[16/10] w-full bg-gradient-to-r from-white/10 to-white/5">
-          <div class="shimmer"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Text block -->
-    <div class="order-2" appRevealOnScroll [fromX]="40" [fromScale]="0.98" [delay]="0.05">
-      <p class="text-xs tracking-[0.2em] uppercase text-purple-300/80">Featured Project</p>
-      <h3 class="mt-1 text-3xl font-semibold text-white">{{ items[1].title }}</h3>
-      <div class="mt-5 relative">
-        <div class="absolute -inset-2 rounded-2xl bg-purple-500/20 blur-2xl"></div>
-        <div class="relative rounded-2xl ring-1 ring-white/10 bg-white/5 p-5 text-white/80">
-          {{ items[1].description }}
-        </div>
-      </div>
-    </div>
-  </article>
+    </article>
+  }
 
   <!-- Sparkles row -->
   <div class="mt-10 flex justify-center gap-6 opacity-80" appRevealOnScroll [delay]="0.2">

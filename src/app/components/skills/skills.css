@@ -1,14 +1,52 @@
 /* Slow spinning rings */
 .animate-spin-slow {
-  animation: spin 16s linear infinite;
+  animation: orbit-slow 18s linear infinite;
+  will-change: transform;
 }
 .animate-spin-slower {
-  animation: spin 28s linear infinite reverse;
+  animation: orbit-slower 32s linear infinite;
+  will-change: transform;
 }
 
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-slow {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0) scale(1);
+  }
+  25% {
+    transform: rotate(90deg) translate3d(0, -2px, 0) scale(1.006);
+  }
+  50% {
+    transform: rotate(180deg) translate3d(2px, 0, 0) scale(1.012);
+  }
+  75% {
+    transform: rotate(270deg) translate3d(0, 2px, 0) scale(1.006);
+  }
+  100% {
+    transform: rotate(360deg) translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes orbit-slower {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0) scale(1);
+  }
+  25% {
+    transform: rotate(-90deg) translate3d(-2px, 0, 0) scale(1.004);
+  }
+  50% {
+    transform: rotate(-180deg) translate3d(0, 2px, 0) scale(1.01);
+  }
+  75% {
+    transform: rotate(-270deg) translate3d(2px, 0, 0) scale(1.004);
+  }
+  100% {
+    transform: rotate(-360deg) translate3d(0, 0, 0) scale(1);
   }
 }
 
@@ -28,32 +66,69 @@
   50% { opacity: 1; }
 }
 
- .skill-card {
-   position: relative;
-   overflow: hidden;
-   border-radius: 1rem;
-   padding: 0.75rem;
-   text-align: left;
-   background: rgba(255, 255, 255, 0.04);
-   border: 1px solid rgba(255, 255, 255, 0.10);
-   box-shadow:
-     0 1px 0 rgba(255, 255, 255, 0.06) inset,
-     0 10px 26px rgba(0, 0, 0, 0.18);
-   transform: translateZ(0);
-   transition:
-     transform 220ms ease,
-     border-color 220ms ease,
-     box-shadow 240ms ease,
-     background-color 220ms ease;
- }
+.orbital-core {
+  animation: core-breathe 3.8s ease-in-out infinite;
+  will-change: transform;
+}
 
- .skill-card-bg {
-   position: absolute;
-   inset: -40px;
-   opacity: 0.8;
-   filter: blur(28px);
-   transition: opacity 240ms ease, filter 240ms ease;
- }
+.orbital-glyph {
+  animation: glyph-float 3.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes core-breathe {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -2px, 0) scale(1.025);
+  }
+}
+
+@keyframes glyph-float {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -3px, 0) rotate(-2deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin-slow,
+  .animate-spin-slower,
+  .orbital-core,
+  .orbital-glyph {
+    animation: none !important;
+  }
+}
+
+.skill-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  padding: 0.75rem;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 10px 26px rgba(0, 0, 0, 0.18);
+  transform: translateZ(0);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 240ms ease,
+    background-color 220ms ease;
+}
+
+.skill-card-bg {
+  position: absolute;
+  inset: -40px;
+  opacity: 0.8;
+  filter: blur(28px);
+  transition: opacity 240ms ease, filter 240ms ease;
+}
 
  .skill-card::after {
    content: '';
@@ -78,7 +153,6 @@
    width: 2.25rem;
    height: 2.25rem;
    border-radius: 0.85rem;
-   color: rgba(255, 255, 255, 0.92);
    background: rgba(255, 255, 255, 0.06);
    border: 1px solid rgba(255, 255, 255, 0.10);
    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
@@ -92,19 +166,19 @@
    color: rgba(255, 255, 255, 0.86);
  }
 
- .skill-card:hover {
-   transform: translateY(-3px) scale(1.01);
-   border-color: rgba(255, 255, 255, 0.18);
-   background: rgba(255, 255, 255, 0.05);
-   box-shadow:
-     0 1px 0 rgba(255, 255, 255, 0.08) inset,
-     0 18px 44px rgba(124, 58, 237, 0.18);
- }
+.skill-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 18px 44px rgba(124, 58, 237, 0.18);
+}
 
- .skill-card:hover .skill-card-bg {
-   opacity: 1;
-   filter: blur(22px);
- }
+.skill-card:hover .skill-card-bg {
+  opacity: 1;
+  filter: blur(22px);
+}
 
  .skill-card:hover .skill-icon {
    transform: translateY(-1px) scale(1.04);
@@ -122,3 +196,36 @@
  }
 
 
+.orbital-core {
+  animation: core-breathe 3.8s ease-in-out infinite;
+}
+
+.orbital-glyph {
+  animation: glyph-float 3.2s ease-in-out infinite;
+}
+
+
+.glow-pulse::after {
+  animation: pulse 2.8s ease-in-out infinite;
+}
+
+.ring {
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+  border-image-slice: 1;
+  background: conic-gradient(from 0deg, #C084FC, #818CF8, #22D3EE, #A78BFA, #C084FC);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), black 0) center/100% 100% no-repeat;
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), black 0) center/100% 100% no-repeat;
+  animation: swirl 20s linear infinite, pulse-ring 4s ease-in-out infinite;
+}
+
+@keyframes swirl {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-ring {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
