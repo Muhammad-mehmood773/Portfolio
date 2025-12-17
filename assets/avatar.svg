@@ -1,0 +1,93 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(512 420) rotate(90) scale(560)">
+      <stop offset="0" stop-color="#A78BFA" stop-opacity="0.40"/>
+      <stop offset="0.55" stop-color="#60A5FA" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#0B0616" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="220" y1="160" x2="820" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A78BFA"/>
+      <stop offset="0.5" stop-color="#7DD3FC"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="330" y1="220" x2="740" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B0F17"/>
+      <stop offset="1" stop-color="#2B2F3A"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="320" y1="700" x2="720" y2="980" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A1C22"/>
+      <stop offset="1" stop-color="#2C2F36"/>
+    </linearGradient>
+    <filter id="soft" x="0" y="0" width="1024" height="1024" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <clipPath id="clip">
+      <circle cx="512" cy="512" r="432"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip)">
+    <rect width="1024" height="1024" fill="none"/>
+    <circle cx="512" cy="512" r="460" fill="url(#bg)" filter="url(#soft)"/>
+  </g>
+
+  <circle cx="512" cy="512" r="420" stroke="url(#ring)" stroke-width="14" stroke-opacity="0.55"/>
+  <circle cx="512" cy="512" r="402" stroke="white" stroke-width="2" stroke-opacity="0.08"/>
+
+  <!-- Neck -->
+  <path d="M454 650c10 40 30 60 58 60s48-20 58-60v-44H454v44Z" fill="#E7BFAE"/>
+
+  <!-- Face -->
+  <path d="M512 668c-120 0-216-96-216-216V416c0-120 96-216 216-216s216 96 216 216v36c0 120-96 216-216 216Z" fill="#F1C0A0"/>
+  <path d="M352 470c22 120 110 196 160 196s138-76 160-196c-22 22-72 42-112 42-70 0-108-40-128-40s-58 40-128 40c-40 0-90-20-112-42Z" fill="#000" fill-opacity="0.04"/>
+
+  <!-- Ears -->
+  <path d="M296 512c0-34 24-62 58-62h10v124h-10c-34 0-58-28-58-62Z" fill="#EAB397"/>
+  <path d="M728 512c0-34-24-62-58-62h-10v124h10c34 0 58-28 58-62Z" fill="#EAB397"/>
+
+  <!-- Hair (cartoon style like uploaded image) -->
+  <path d="M252 470c22-160 152-276 310-276s288 116 310 276c-18-28-58-62-118-74-44-8-92 6-132 30-38-26-86-40-132-30-60 12-100 46-118 74Z" fill="url(#hair)"/>
+  <path d="M312 452c26-78 96-132 200-132 66 0 102 16 142 44 38-30 74-44 142-44 104 0 174 54 200 132-40-18-86-26-130-20-48 6-90 26-112 44-24-20-66-38-112-44-44-6-90 2-130 20Z" fill="#0B0616" fill-opacity="0.25"/>
+  <path d="M422 394c-56 18-88 62-104 104 44-14 86-12 118 4-10-40-8-74-14-108Z" fill="#0B0616" fill-opacity="0.20"/>
+  <path d="M602 394c56 18 88 62 104 104-44-14-86-12-118 4 10-40 8-74 14-108Z" fill="#0B0616" fill-opacity="0.20"/>
+
+  <!-- Eyebrows -->
+  <path d="M382 500c22-22 62-30 96-18" stroke="#1C1F26" stroke-width="18" stroke-linecap="round"/>
+  <path d="M642 500c-22-22-62-30-96-18" stroke="#1C1F26" stroke-width="18" stroke-linecap="round"/>
+
+  <!-- Eyes -->
+  <ellipse cx="442" cy="544" rx="46" ry="34" fill="#FFFFFF"/>
+  <ellipse cx="582" cy="544" rx="46" ry="34" fill="#FFFFFF"/>
+  <circle cx="452" cy="548" r="22" fill="#6B3B2A"/>
+  <circle cx="592" cy="548" r="22" fill="#6B3B2A"/>
+  <circle cx="456" cy="548" r="10" fill="#2B120D"/>
+  <circle cx="596" cy="548" r="10" fill="#2B120D"/>
+  <circle cx="446" cy="538" r="5" fill="#FFFFFF" fill-opacity="0.85"/>
+  <circle cx="586" cy="538" r="5" fill="#FFFFFF" fill-opacity="0.85"/>
+
+  <!-- Nose -->
+  <path d="M512 566c16 14 16 30 0 44" stroke="#C89078" stroke-width="10" stroke-linecap="round"/>
+  <path d="M486 612c12 10 28 10 52 0" stroke="#C89078" stroke-width="10" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Freckles -->
+  <g fill="#C9806B" opacity="0.35">
+    <circle cx="404" cy="590" r="5"/>
+    <circle cx="426" cy="602" r="4"/>
+    <circle cx="450" cy="592" r="4"/>
+    <circle cx="470" cy="604" r="3"/>
+    <circle cx="620" cy="590" r="5"/>
+    <circle cx="598" cy="602" r="4"/>
+    <circle cx="574" cy="592" r="4"/>
+    <circle cx="554" cy="604" r="3"/>
+  </g>
+
+  <!-- Mouth -->
+  <path d="M452 660c26 22 48 32 60 32s34-10 60-32" stroke="#B06C5B" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- Shirt (like uploaded, dark tee) -->
+  <path d="M214 980c44-210 206-294 298-294h0c92 0 254 84 298 294H214Z" fill="url(#shirt)"/>
+  <path d="M388 710c32 52 76 80 124 80s92-28 124-80c-46 18-94 28-124 28s-78-10-124-28Z" fill="#000" fill-opacity="0.18"/>
+  <path d="M390 720c48-38 92-56 122-56s74 18 122 56c-8 16-24 30-48 36-26 8-48 6-74 6s-48 2-74-6c-24-6-40-20-48-36Z" fill="#111827" fill-opacity="0.18"/>
+
+  <path d="M382 410c0-128 78-224 172-224" stroke="white" stroke-opacity="0.10" stroke-width="18" stroke-linecap="round"/>
+</svg>
