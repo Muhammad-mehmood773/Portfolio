@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/',
+  basePath: '/Deploy-Portfolio',
   supportedLocales: {
   "en-US": ""
 },
